@@ -103,7 +103,6 @@ while public == False:
 		logger.info("WAN IP is Public, aborting")
 		driver.find_element(By.LINK_TEXT, "Logout").click()
 		logger.info("Logged out")
-		subprocess.run("/usr/sbin/ddclient")
 		public = True
 		break
 	elif ((uptime == "0 sec")):
