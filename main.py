@@ -30,7 +30,7 @@ chrome_options.add_argument('--acceptInsecureCerts')
 
 public = False
 retry = 0
-driver = webdriver.Chrome(chrome_options=chrome_options, executable_path='/srv/torrent/downloads/publicip/chromedriver')
+driver = webdriver.Chrome(chrome_options=chrome_options, executable_path='chromedriver')
 
 def login(user, password):
 	driver.get("https://192.168.1.1/")
@@ -94,7 +94,7 @@ def manual():
 		logger.info("Connection trigger is already manual")
 
 user = "user"
-password = "chrisg661"
+password = "password"
 login(user, password)
 
 while public == False:
@@ -119,7 +119,7 @@ while public == False:
 	logger.info("Connection retry %s", retry)
 	retry += 1
 
-logger.info("JOB DONE with %s try!", retry)
+logger.info("Finished with %s try!", retry)
 driver.close()
 driver.quit()
 quit()
